@@ -1,30 +1,17 @@
-# Asterisk 17 PBX
-
-
+# Asterisk 20 PBX
+ 
 docker login 
 docker build -t domonapapp/asterisk:20 .
 docker system prune
 docker push domonapapp/asterisk:20 
 
 
-Since COPY copies files including their metadata, 
-you can also simply change the permissions of the file in 
-the host machine (the one building the Docker image): 
-$ chmod +x entrypoint.sh
-
-chown asterisk /etc
-To change all the directories to 755 (drwxr-xr-x):
-
-find /asterisk -type d -exec chmod 755 {} \;
-To change all the files to 644 (-rw-r--r--):
-
-find /asterisk -type f -exec chmod 644 {} \;
  
-cdchown -R asterisk:asterisk asterisk
+
 
 Uses `debian:buster-slim` because `uuid-dev` is not available in Alpine.
 
-Builds Asterisk 17 from git master.
+Builds Asterisk 20 from git master.
 
 Multi-stage Dockerfile uses build-essential and git to clone from the git repository https://github.com/asterisk/asterisk.git
 
@@ -79,7 +66,7 @@ Full details are here: [Asterisk LDAP Integration](http://asteriskdocs.org/en/3r
 
 ## ODBC and PostgreSQL Support
 
-Now build with ODBC and the postgresql-client to enble the use of real-time databases.
+Now build with ODBC and the postgresql-client to enable the use of real-time databases.
 
 ## Festival TTS
 
