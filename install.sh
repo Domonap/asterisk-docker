@@ -3,7 +3,6 @@
 apt-get update
 
 apt-get install -y \
-  festival \
   libedit-dev \
   libjansson-dev \
   libldap2-dev \

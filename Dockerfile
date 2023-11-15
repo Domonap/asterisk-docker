@@ -1,8 +1,6 @@
 FROM ubuntu:22.04 as builder
 
 LABEL maintainer="info@domonap.ru"
- 
-#USER root
 
 COPY ${PWD}/make.sh /
 
@@ -32,6 +30,5 @@ COPY ${PWD}/asterisk.conf /etc/supervisor/conf.d/asterisk.conf
 EXPOSE 5060/udp 5060/tcp 8088/tcp 5038/tcp 10000-11000/udp
 
 VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phoneprov /var/spool/asterisk /var/log/asterisk /etc/asterisk
-
 
 ENTRYPOINT ["/entrypoint.sh"]
