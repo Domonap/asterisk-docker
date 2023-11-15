@@ -26,9 +26,8 @@ apt-get install -y \
   uuid-dev \
   wget
 
-#git clone https://github.com/asterisk/asterisk.git /asterisk
-git clone -b 20 https://github.com/asterisk/asterisk asterisk
-cd /asterisk
+git clone -b 20 https://github.com/asterisk/asterisk.git /asterisk-20
+cd /asterisk-20
 ./configure
 make
 make menuselect
@@ -36,9 +35,9 @@ make install
 make config
 make samples
 
-cd /tmp 
-wget https://downloads.digium.com/pub/telephony/codec_opus/asterisk-20.0/x86-64/codec_opus-20.0_current-x86_64.tar.gz
-tar xvzf codec_opus-20.0_current-x86_64.tar.gz
-cp 'codec_opus-20.0_1.3.0-x86_64/*.so' '/usr/lib/asterisk/modules/'
-cp 'codec_opus-20.0_1.3.0-x86_64/codec_opus_config-en_US.xml' '/var/lib/asterisk/documentation/thirdparty'
+cd /tmp
 
+wget https://v-piski.ru/wp-content/uploads/codec_opus.tar.gz
+tar xvzf codec_opus.tar.gz
+cp codec_opus/*.so /usr/lib/asterisk/modules/
+cp codec_opus/codec_opus_config-en_US.xml /var/lib/asterisk/documentation/thirdparty

@@ -1,12 +1,10 @@
 # Asterisk 17 PBX
 
 
-docker login
-docker login registry-1.docker.io
-
-docker build -t asterisk/domonap:20 .
-
- 
+docker login 
+docker build -t domonapapp/asterisk:20 .
+docker system prune
+docker push domonapapp/asterisk:20 
 
 Uses `debian:buster-slim` because `uuid-dev` is not available in Alpine.
 
