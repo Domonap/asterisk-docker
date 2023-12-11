@@ -20,7 +20,8 @@ To change all the files to 644 (-rw-r--r--):
 
 find /asterisk -type f -exec chmod 644 {} \;
  
-cdchown -R asterisk:asterisk asterisk
+chown -R asterisk:asterisk asterisk 
+chown -R asterisk:asterisk entrypoint.sh
 
 Uses `debian:buster-slim` because `uuid-dev` is not available in Alpine.
 

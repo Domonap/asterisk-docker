@@ -8,8 +8,8 @@ else
   COMMAND="$@"
 fi
 
-chown -R asterisk:  /var/log/asterisk \
-                    /var/lib/asterisk \
-                    /var/run/asterisk \
-                    /var/spool/asterisk
+chown -R asterisk: /var/log/asterisk \
+                   /var/lib/asterisk \
+                   /var/run/asterisk \
+                   /var/spool/asterisk
 exec ${COMMAND}

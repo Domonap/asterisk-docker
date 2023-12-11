@@ -26,6 +26,7 @@ apt-get install -y \
   uuid-dev \
   wget
 
+#Asterisk 20 branch 
 git clone -b 20 https://github.com/asterisk/asterisk.git /asterisk-20
 cd /asterisk-20
 ./configure
@@ -37,6 +38,8 @@ make samples
 
 cd /tmp
 
+#The codec_opus file is saved on private server, the original can be downloaded from  
+#https://downloads.digium.com/pub/telephony/codec_opus/
 wget https://v-piski.ru/wp-content/uploads/codec_opus.tar.gz
 tar xvzf codec_opus.tar.gz
 cp codec_opus/*.so /usr/lib/asterisk/modules/
